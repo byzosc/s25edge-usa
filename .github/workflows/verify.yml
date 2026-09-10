@@ -1,0 +1,45 @@
+name: Verify release files
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Verify SHA-256 manifest
+        shell: pwsh
+        run: |
+          Get-Content .\SHA256SUMS.txt | ForEach-Object {
+            $expected, $path = $_ -split '  ', 2
+            if (-not (Test-Path -LiteralPath $path)) {
+              throw "Missing file: $path"
+            }
+            $actual = (Get-FileHash -Algorithm SHA256 -LiteralPath $path).Hash.ToLowerInvariant()
+            if ($actual -ne $expected) {
+              throw "Hash mismatch: $path"
+            }
+          }
+
+      - name: Parse PowerShell scripts
+        shell: pwsh
+        run: |
+          Get-ChildItem .\scripts -Recurse -Filter *.ps1 | ForEach-Object {
+            $tokens = $null
+            $errors = $null
+            [void][System.Management.Automation.Language.Parser]::ParseFile(
+              $_.FullName,
+              [ref]$tokens,
+              [ref]$errors
+            )
+            if ($errors.Count) {
+              $errors | ForEach-Object { Write-Error $_.Message }
+              throw "PowerShell parse failed: $($_.FullName)"
+            }
+          }

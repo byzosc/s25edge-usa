@@ -1,0 +1,24 @@
+S25 Edge 5G recovery - retrospective action transcript
+Date: 2026-08-27 Asia/Hong_Kong
+Device: SM-S937U1 / XAA / Android 16 / S937U1UES8CZF5
+SIM target: SIM 1
+
+01:14 - Saved before snapshot; network type LTE,LTE; operator China Mobile.
+01:14 - Opened Samsung Service Mode through ADB-controlled Samsung Dialer.
+01:14 - Selected UE SETTING & INFO > SETTING > SYSTEM > NEXT PAGE x4 > SET LTE BAND CONFIG > SET DEFAULT LTE BAND.
+01:15 - Reopened Service Mode main menu.
+01:15 - Selected UE SETTING & INFO > SETTING > PROTOCOL > NR5G > PRUNE STATUS > REMOVE NR5G PRUNE.
+01:16 - Reopened Service Mode main menu.
+01:16 - Selected UE SETTING & INFO > SETTING > PROTOCOL > GCF > REMOVE ONLY NR WHITELIST.
+01:17 - Reopened Service Mode main menu.
+01:17 - Selected UE SETTING & INFO > SETTING > PROTOCOL > NR5G > SA/NSA MODE CONTROL > SA/NSA ENABLE.
+01:18 - Reopened Service Mode main menu.
+01:18 - Selected UE SETTING & INFO > SETTING > PROTOCOL > NR5G > SA/NSA MODE CONTROL > REMOVE SA PERMIT LIST.
+01:18 - Requested normal reboot through ADB.
+01:19 - Device reconnected after boot.
+01:19 - Saved after snapshot; network type NR_SA,LTE; operator China Mobile.
+01:19 - Ran independent verification and confirmed an NR/5G indication.
+
+Not performed: root, bootloader unlock, firmware flash, CSC change, factory reset,
+FRP operation, mmWave ALL ENABLE, CA combo modification, CDRX, DSS, NRDC,
+protocol simulation, or preferred_network_mode database changes.

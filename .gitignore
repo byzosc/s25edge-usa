@@ -1,0 +1,4 @@
+*.tmp
+logs/*.json
+logs/*.txt
+logs/*.log

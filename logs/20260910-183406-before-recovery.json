@@ -1,0 +1,17 @@
+{
+    "captured_at":  "2026-09-10 18:34:06 +08:00",
+    "model":  "SM-S937U1",
+    "product_name":  "psquew",
+    "device":  "psq",
+    "android":  "16",
+    "sdk":  "36",
+    "security_patch":  "2026-08-05",
+    "build_incremental":  "S937U1UES9CZF9",
+    "build_fingerprint":  "samsung/psquew/psq:16/BP4A.251205.006/S937U1UES9CZF9_OYM9CZF9:user/release-keys",
+    "sales_code":  "XAA",
+    "boot_sales_code":  "XAA",
+    "boot_carrier_id":  "XAA",
+    "sim_config":  "dsds",
+    "network_type":  "LTE,LTE",
+    "operator_name":  "中国移动,中国移动"
+}
