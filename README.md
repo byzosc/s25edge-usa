@@ -1,6 +1,6 @@
 # 美版 Galaxy S25 Edge + 中国移动 5G 恢复包
 
-[![Verify release files](https://github.com/zerbLion/s25edge-usa/actions/workflows/verify.yml/badge.svg)](https://github.com/zerbLion/s25edge-usa/actions/workflows/verify.yml)
+[![Verify release files](https://github.com/byzosc/s25edge-usa/actions/workflows/verify.yml/badge.svg)](https://github.com/byzosc/s25edge-usa/actions/workflows/verify.yml)
 
 这套文件用于 **SM-S937U / SM-S937U1** 在系统或 CSC 更新后，重复恢复三星 Service Mode 里的 5G 设置。它不 Root、不解锁 Bootloader、不刷机、不改 CSC，也不会执行恢复出厂设置。
 
